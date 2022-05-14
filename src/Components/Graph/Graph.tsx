@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import styles from "./style.module.scss";
@@ -13,6 +13,7 @@ type Props = {
 const Graph: React.FC<Props> = ({ populationData }) => {
   const series: Highcharts.SeriesOptionsType[] = [];
   const categories = [];
+  // const [checkedpref, setCheckedpref] = useState([]);
 
   for (const p of populationData) {
     const data = [];
@@ -27,10 +28,19 @@ const Graph: React.FC<Props> = ({ populationData }) => {
       data: data,
     });
   }
+  console.log(series);
+  // const prefList =series.name;
+
+  var prefList = series.map((item) => {
+    return item.name;
+  });
+  console.log("prefList", prefList);
+  const prefListStr = prefList.join(" ");
+  console.log("prefListStr", prefListStr);
 
   const options: Highcharts.Options = {
     title: {
-      text: "都道府県別総人口推移",
+      text: prefListStr + " の総人口推移",
     },
     xAxis: {
       title: {
