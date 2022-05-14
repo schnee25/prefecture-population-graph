@@ -61,5 +61,6 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "prettier": "^2.6.2"
   },
-  "homepage": "https://schnee25.github.io/prefecture-population-graph"
+  "homepage": "https://schnee25.github.io/prefecture-population-graph",
+  "build": "react-scripts build && cp build/index.html build/404.html"
 }
