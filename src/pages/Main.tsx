@@ -7,8 +7,6 @@ import Graph from '../Components/Graph/Graph'
 // const Apikey = process.env.REACT_APP_API_KEY;
 const ApiKey = 'owZHJwNQSeb7WDoUgRRiAWlJRXEhqP6Vr5NcYO8W'
 
-console.log('aaa', ApiKey)
-
 const Main: React.FC = () => {
   const [prefectures, setPreFectures] = useState<{
     message: null
