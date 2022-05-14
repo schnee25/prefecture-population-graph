@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json", // tsconfig.jsonを拡張
+  "include": [
+    // パースするのは、srcフォルダ内のファイルのみ
+    "src/**/*.js",
+    "src/**/*.jsx",
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ],
+  "exclude": [
+    // node_modulesのファイルは除外
+    "node_modules"
+  ]
+}
