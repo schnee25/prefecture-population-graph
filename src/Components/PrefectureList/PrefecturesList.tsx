@@ -40,7 +40,6 @@ const PrefecturesList: React.FC<Props> = ({ prefectures, onChange }) => {
                 name="Prefecture name"
                 onChange={(event) => {
                   onChange(prefecture.prefName, prefecture.prefCode, event.target.checked);
-
                   checkedPrefectures.includes(prefecture.prefName + " ")
                     ? setCheckedPrefectures(
                         checkedPrefectures.filter(
@@ -49,8 +48,6 @@ const PrefecturesList: React.FC<Props> = ({ prefectures, onChange }) => {
                         )
                       )
                     : setCheckedPrefectures([...checkedPrefectures, prefecture.prefName + " "]);
-
-                  // setCheckedList([...checkedList, prefecture.prefName]);
                 }}
                 id={"checkbox" + prefecture.prefCode}
               />
@@ -65,21 +62,4 @@ const PrefecturesList: React.FC<Props> = ({ prefectures, onChange }) => {
   );
 };
 
-// const Styles: { [key: string]: React.CSSProperties } = {
-//   PrefectureList: {
-//     display: "flex",
-//     flexWrap: "wrap",
-//     padding: "10px",
-//     justifyContent: "flex-start",
-//     justifySelf: "auto",
-//   },
-//   text: { display: "contents", marginLeft: "1em", cursor: "pointer" },
-//   prefectureCheckbox: {
-//     borderRadius: "24px",
-//     border: "solid 2px",
-//     textAlign: "center",
-//     padding: "5px 8px 5px 8px",
-//     margin: "0.5rem",
-//   },
-// };
 export default PrefecturesList;
