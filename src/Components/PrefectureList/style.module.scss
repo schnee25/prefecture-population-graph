@@ -1,3 +1,23 @@
+.checkedList {
+  display: flex;
+  align-items: baseline;
+  margin: 1em 0;
+}
+p {
+  margin: 0;
+}
+.checked {
+  margin: 0 1em;
+}
+.unchecked {
+  margin: 1em;
+}
+button {
+  margin: 0 0 1em 1em;
+}
+.toggle {
+  display: none;
+}
 .PrefectureList {
   display: flex;
   flex-wrap: wrap;
@@ -18,16 +38,15 @@
   cursor: pointer;
   font-size: 1em;
 }
+
 @media screen and (min-width: 480px) {
   /*　スマホ横以上　*/
-  p {
-    color: #ededed;
-  }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   /*　タブレット以上　*/
   .toggle {
     display: none;
+    visibility: hidden;
   }
 }
 @media screen and (min-width: 1024px) {
