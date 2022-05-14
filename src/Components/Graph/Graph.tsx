@@ -10,7 +10,6 @@ type Props = {
   }[];
 };
 
-// 選んだ都道府県の人口推移グラフを表示するコンポーネント
 const Graph: React.FC<Props> = ({ populationData }) => {
   const series: Highcharts.SeriesOptionsType[] = [];
   const categories = [];
@@ -22,7 +21,6 @@ const Graph: React.FC<Props> = ({ populationData }) => {
       data.push(pd.value);
       categories.push(String(pd.year));
     }
-
     series.push({
       type: "line",
       name: p.prefName,
@@ -45,13 +43,15 @@ const Graph: React.FC<Props> = ({ populationData }) => {
         text: "人口数",
       },
     },
-    // 都道府県を一つも選んでいない場合との分岐条件
+    chart: {
+      backgroundColor: "transparent",
+    },
     series: series.length === 0 ? [{ type: "line", name: "都道府県名", data: [] }] : series,
   };
 
   return (
     <div className={styles["graph"]}>
-      <HighchartsReact highcharts={Highcharts} options={options} />
+      <HighchartsReact highcharts={Highcharts} options={options} className={styles["Highcharts"]} />
     </div>
   );
 };
