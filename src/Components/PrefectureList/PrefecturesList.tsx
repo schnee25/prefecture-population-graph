@@ -12,18 +12,18 @@ type Props = {
   onChange: (name: string, prefName: number, check: boolean) => void;
 };
 
-// 都道府県一覧のチェックボックスを表示するコンポーネント
 const PrefecturesList: React.FC<Props> = ({ prefectures, onChange }) => {
   const [ListVisible, setListVisible] = useState<boolean>(true);
   const [checkedPrefectures, setCheckedPrefectures] = useState<string[]>([]);
-  console.log({ checkedPrefectures });
+
   return (
     <>
       {checkedPrefectures.length === 0 ? (
         <h3 className={styles["unchecked"]}>選択してください</h3>
       ) : (
         <div className={styles["checkedList"]}>
-          <h3 className={styles["checked"]}>選択中:</h3> <p>{checkedPrefectures}</p>
+          <h3 className={styles["checked"]}>選択中:</h3>{" "}
+          <p className={styles["checkedPrefectures"]}>{checkedPrefectures}</p>
         </div>
       )}
 
@@ -32,12 +32,20 @@ const PrefecturesList: React.FC<Props> = ({ prefectures, onChange }) => {
       </button>
       <div className={ListVisible ? "" : styles["toggle"]}>
         <button onClick={() => setListVisible(false)}>一覧を閉じる</button>
+
         <div className={classNames(styles.PrefectureList)}>
           {prefectures.map((prefecture) => (
-            <div className={styles["prefectureCheckbox"]} key={prefecture.prefName}>
+            <div
+              className={classNames(
+                styles.prefectureCheckboxes,
+                checkedPrefectures.includes(prefecture.prefName + " ") ? styles.CheckedBoxes : null
+              )}
+              key={prefecture.prefName}
+            >
               <input
                 type="checkbox"
-                name="Prefecture name"
+                name="PrefectureName"
+                className={styles["prefectureCheck"]}
                 onChange={(event) => {
                   onChange(prefecture.prefName, prefecture.prefCode, event.target.checked);
                   checkedPrefectures.includes(prefecture.prefName + " ")
@@ -52,11 +60,17 @@ const PrefecturesList: React.FC<Props> = ({ prefectures, onChange }) => {
                 id={"checkbox" + prefecture.prefCode}
               />
               <label className={styles["text"]} htmlFor={"checkbox" + prefecture.prefCode}>
-                {prefecture.prefName.length === 3 ? " " + prefecture.prefName : prefecture.prefName}
+                {prefecture.prefName.length === 3
+                  ? "\u00a0 " + prefecture.prefName + "\u2007"
+                  : prefecture.prefName}
               </label>
             </div>
           ))}
         </div>
+
+        <button className={styles.forPhone} onClick={() => setListVisible(false)}>
+          一覧を閉じる
+        </button>
       </div>
     </>
   );
