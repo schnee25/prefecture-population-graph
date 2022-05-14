@@ -5,3 +5,9 @@
   border-left: 0.3rem solid #000;
   margin-left: 10pt;
 }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  /*　タブレット以上〜　*/
+}
+@media screen and (min-width: 1024px) {
+  /*　PC〜　*/
+}

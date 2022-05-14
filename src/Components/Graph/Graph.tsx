@@ -30,7 +30,7 @@ const Graph: React.FC<Props> = ({ populationData }) => {
 
   const options: Highcharts.Options = {
     title: {
-      text: "総人口推移",
+      text: "都道府県別総人口推移",
     },
     xAxis: {
       title: {
