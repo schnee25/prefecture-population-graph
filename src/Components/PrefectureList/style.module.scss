@@ -1,0 +1,19 @@
+.PrefectureList {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  justify-content: flex-start;
+  justify-self: auto;
+}
+.text {
+  display: contents;
+  margin-left: 1em;
+  cursor: pointer;
+}
+.prefectureCheckbox {
+  border-radius: 24px;
+  border: solid 2px;
+  text-align: center;
+  padding: 5px 8px 5px 8px;
+  margin: 0.5rem;
+}
