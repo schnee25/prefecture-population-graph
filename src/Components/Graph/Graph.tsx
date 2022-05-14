@@ -60,7 +60,7 @@ const Graph: React.FC<Props> = ({ populationData }) => {
   };
 
   return (
-    <div className={styles["graph"]}>
+    <div className={styles.graph}>
       <HighchartsReact highcharts={Highcharts} options={options} className={styles["Highcharts"]} />
     </div>
   );

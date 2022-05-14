@@ -66,11 +66,11 @@ const Main: React.FC = () => {
 
   return (
     <main>
-      <h2 className={styles["label"]}>都道府県</h2>
+      <h2 className={styles.label}>都道府県</h2>
       {prefectures && (
         <PrefecturesList prefectures={prefectures.result} onChange={handleClickCheck} />
       )}
-      <h2 className={styles["label"]}>人口推移グラフ</h2>
+      <h2 className={styles.label}>人口推移グラフ</h2>
       <Graph populationData={prefPopulation} />
     </main>
   );

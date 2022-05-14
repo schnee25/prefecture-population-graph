@@ -19,18 +19,18 @@ const PrefecturesList: React.FC<Props> = ({ prefectures, onChange }) => {
   return (
     <>
       {checkedPrefectures.length === 0 ? (
-        <h3 className={styles["unchecked"]}>選択してください</h3>
+        <h3 className={styles.unchecked}>選択してください</h3>
       ) : (
-        <div className={styles["checkedList"]}>
-          <h3 className={styles["checked"]}>選択中:</h3>{" "}
-          <p className={styles["checkedPrefectures"]}>{checkedPrefectures}</p>
+        <div className={styles.checkedList}>
+          <h3 className={styles.checked}>選択中:</h3>{" "}
+          <p className={styles.checkedPrefectures}>{checkedPrefectures}</p>
         </div>
       )}
 
-      <button className={ListVisible ? styles["toggle"] : ""} onClick={() => setListVisible(true)}>
+      <button className={ListVisible ? styles.toggle : ""} onClick={() => setListVisible(true)}>
         一覧を開く
       </button>
-      <div className={ListVisible ? "" : styles["toggle"]}>
+      <div className={ListVisible ? "" : styles.toggle}>
         <button onClick={() => setListVisible(false)}>一覧を閉じる</button>
 
         <div className={classNames(styles.PrefectureList)}>
@@ -45,7 +45,7 @@ const PrefecturesList: React.FC<Props> = ({ prefectures, onChange }) => {
               <input
                 type="checkbox"
                 name="PrefectureName"
-                className={styles["prefectureCheck"]}
+                className={styles.prefectureCheck}
                 onChange={(event) => {
                   onChange(prefecture.prefName, prefecture.prefCode, event.target.checked);
                   checkedPrefectures.includes(prefecture.prefName + " ")
@@ -59,7 +59,7 @@ const PrefecturesList: React.FC<Props> = ({ prefectures, onChange }) => {
                 }}
                 id={"checkbox" + prefecture.prefCode}
               />
-              <label className={styles["text"]} htmlFor={"checkbox" + prefecture.prefCode}>
+              <label className={styles.text} htmlFor={"checkbox" + prefecture.prefCode}>
                 {prefecture.prefName.length === 3
                   ? "\u00a0 " + prefecture.prefName + "\u2007"
                   : prefecture.prefName}
