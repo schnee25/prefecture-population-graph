@@ -1,69 +1,67 @@
-import React, { useState } from "react";
-import Highcharts from "highcharts";
-import HighchartsReact from "highcharts-react-official";
-import styles from "./style.module.scss";
+import React from 'react'
+import Highcharts from 'highcharts'
+import HighchartsReact from 'highcharts-react-official'
+import styles from './style.module.scss'
 
 type Props = {
   populationData: {
-    prefName: string;
-    data: { year: number; value: number }[];
-  }[];
-};
+    prefName: string
+    data: { year: number; value: number }[]
+  }[]
+}
 
 const Graph: React.FC<Props> = ({ populationData }) => {
-  const series: Highcharts.SeriesOptionsType[] = [];
-  const categories = [];
-  // const [checkedpref, setCheckedpref] = useState([]);
+  const series: Highcharts.SeriesOptionsType[] = []
+  const categories = []
 
   for (const p of populationData) {
-    const data = [];
+    const data = []
 
     for (const pd of p.data) {
-      data.push(pd.value);
-      categories.push(String(pd.year));
+      data.push(pd.value)
+      categories.push(String(pd.year))
     }
     series.push({
-      type: "line",
+      type: 'line',
       name: p.prefName,
       data: data,
-    });
+    })
   }
-  console.log(series);
-  // const prefList =series.name;
+  console.log(series)
 
   var prefList = series.map((item) => {
-    return item.name;
-  });
-  console.log("prefList", prefList);
-  const prefListStr = prefList.join(" ");
-  console.log("prefListStr", prefListStr);
+    return item.name
+  })
+  console.log('prefList', prefList)
+  const prefListStr = prefList.join(' ')
+  console.log('prefListStr', prefListStr)
 
   const options: Highcharts.Options = {
     title: {
-      text: prefListStr + " の総人口推移",
+      text: prefListStr + ' の総人口推移',
     },
     xAxis: {
       title: {
-        text: "年度",
+        text: '年度',
       },
       categories: categories,
     },
     yAxis: {
       title: {
-        text: "人口数",
+        text: '人口数',
       },
     },
     chart: {
-      backgroundColor: "transparent",
+      backgroundColor: 'transparent',
     },
-    series: series.length === 0 ? [{ type: "line", name: "都道府県名", data: [] }] : series,
-  };
+    series: series.length === 0 ? [{ type: 'line', name: '都道府県名', data: [] }] : series,
+  }
 
   return (
     <div className={styles.graph}>
-      <HighchartsReact highcharts={Highcharts} options={options} className={styles["Highcharts"]} />
+      <HighchartsReact highcharts={Highcharts} options={options} className={styles['Highcharts']} />
     </div>
-  );
-};
+  )
+}
 
-export default Graph;
+export default Graph
