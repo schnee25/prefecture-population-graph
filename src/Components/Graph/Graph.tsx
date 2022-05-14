@@ -27,14 +27,11 @@ const Graph: React.FC<Props> = ({ populationData }) => {
       data: data,
     })
   }
-  console.log(series)
 
   var prefList = series.map((item) => {
     return item.name
   })
-  console.log('prefList', prefList)
   const prefListStr = prefList.join(' ')
-  console.log('prefListStr', prefListStr)
 
   const options: Highcharts.Options = {
     title: {
