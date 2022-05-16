@@ -72,6 +72,5 @@
     "webpack": "^5.72.1",
     "webpack-cli": "^4.9.2"
   },
-  "homepage": "https://schnee25.github.io/prefecture-population-graph",
   "build": "react-scripts build && cp build/index.html build/404.html"
 }
