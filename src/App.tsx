@@ -1,6 +1,5 @@
 import React from 'react'
 import Main from './pages/Main'
-import reportWebVitals from './reportWebVitals'
 
 const App: React.FC = () => {
   return (
@@ -13,5 +12,4 @@ const App: React.FC = () => {
   )
 }
 
-reportWebVitals(console.log)
 export default App
