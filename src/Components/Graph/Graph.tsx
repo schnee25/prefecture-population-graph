@@ -51,12 +51,19 @@ const Graph: React.FC<Props> = ({ populationData }) => {
     chart: {
       backgroundColor: 'transparent',
     },
-    series: series.length === 0 ? [{ type: 'line', name: '都道府県名', data: [] }] : series,
+    series:
+      series.length === 0
+        ? [{ type: 'line', name: '都道府県名', data: [] }]
+        : series,
   }
 
   return (
     <div className={styles.graph}>
-      <HighchartsReact highcharts={Highcharts} options={options} className={styles.Highcharts} />
+      <HighchartsReact
+        highcharts={Highcharts}
+        options={options}
+        className={styles.Highcharts}
+      />
     </div>
   )
 }

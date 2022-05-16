@@ -27,7 +27,10 @@ const PrefecturesList: React.FC<Props> = ({ prefectures, onChange }) => {
         </div>
       )}
 
-      <button className={ListVisible ? styles.toggle : ''} onClick={() => setListVisible(true)}>
+      <button
+        className={ListVisible ? styles.toggle : ''}
+        onClick={() => setListVisible(true)}
+      >
         一覧を開く
       </button>
       <div className={ListVisible ? '' : styles.toggle}>
@@ -38,7 +41,9 @@ const PrefecturesList: React.FC<Props> = ({ prefectures, onChange }) => {
             <div
               className={classNames(
                 styles.prefectureCheckboxes,
-                checkedPrefectures.includes(prefecture.prefName + ' ') ? styles.CheckedBoxes : null,
+                checkedPrefectures.includes(prefecture.prefName + ' ')
+                  ? styles.CheckedBoxes
+                  : null,
               )}
               key={prefecture.prefName}
             >
@@ -47,18 +52,29 @@ const PrefecturesList: React.FC<Props> = ({ prefectures, onChange }) => {
                 name='PrefectureName'
                 className={styles.prefectureCheck}
                 onChange={(event) => {
-                  onChange(prefecture.prefName, prefecture.prefCode, event.target.checked)
+                  onChange(
+                    prefecture.prefName,
+                    prefecture.prefCode,
+                    event.target.checked,
+                  )
                   checkedPrefectures.includes(prefecture.prefName + ' ')
                     ? setCheckedPrefectures(
                         checkedPrefectures.filter(
-                          (checkedPrefectures) => checkedPrefectures !== prefecture.prefName + ' ',
+                          (checkedPrefectures) =>
+                            checkedPrefectures !== prefecture.prefName + ' ',
                         ),
                       )
-                    : setCheckedPrefectures([...checkedPrefectures, prefecture.prefName + ' '])
+                    : setCheckedPrefectures([
+                        ...checkedPrefectures,
+                        prefecture.prefName + ' ',
+                      ])
                 }}
                 id={'checkbox' + prefecture.prefCode}
               />
-              <label className={styles.text} htmlFor={'checkbox' + prefecture.prefCode}>
+              <label
+                className={styles.text}
+                htmlFor={'checkbox' + prefecture.prefCode}
+              >
                 {prefecture.prefName.length === 3
                   ? '\u00a0 ' + prefecture.prefName + '\u2007'
                   : prefecture.prefName}
@@ -67,7 +83,10 @@ const PrefecturesList: React.FC<Props> = ({ prefectures, onChange }) => {
           ))}
         </div>
 
-        <button className={styles.forPhone} onClick={() => setListVisible(false)}>
+        <button
+          className={styles.forPhone}
+          onClick={() => setListVisible(false)}
+        >
           一覧を閉じる
         </button>
       </div>

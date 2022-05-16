@@ -32,11 +32,20 @@ const Main: React.FC = () => {
       })
   }, [])
 
-  const handleClickCheck = (prefName: string, prefCode: number, check: boolean) => {
+  const handleClickCheck = (
+    prefName: string,
+    prefCode: number,
+    check: boolean,
+  ) => {
     const slicedPrefPopulation = prefPopulation.slice()
 
     if (check) {
-      if (slicedPrefPopulation.findIndex((value) => value.prefName === prefName) !== -1) return
+      if (
+        slicedPrefPopulation.findIndex(
+          (value) => value.prefName === prefName,
+        ) !== -1
+      )
+        return
       axios
         .get(
           'https://opendata.resas-portal.go.jp/api/v1/population/composition/perYear?prefCode=' +
@@ -55,7 +64,9 @@ const Main: React.FC = () => {
         })
       // .catch((error) => {return})
     } else {
-      const deleteIndex = slicedPrefPopulation.findIndex((value) => value.prefName === prefName)
+      const deleteIndex = slicedPrefPopulation.findIndex(
+        (value) => value.prefName === prefName,
+      )
       if (deleteIndex === -1) return
       slicedPrefPopulation.splice(deleteIndex, 1)
       setPrefPopulation(slicedPrefPopulation)
@@ -66,7 +77,10 @@ const Main: React.FC = () => {
     <main>
       <h2 className={styles.label}>都道府県</h2>
       {prefectures && (
-        <PrefecturesList prefectures={prefectures.result} onChange={handleClickCheck} />
+        <PrefecturesList
+          prefectures={prefectures.result}
+          onChange={handleClickCheck}
+        />
       )}
       <h2 className={styles.label}>人口推移グラフ</h2>
       <Graph populationData={prefPopulation} />
