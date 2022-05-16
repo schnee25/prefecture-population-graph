@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
 import styles from './style.module.scss'
+import React, { useState } from 'react'
 import classNames from 'classnames'
 
 type Props = {
@@ -51,8 +51,7 @@ const PrefecturesList: React.FC<Props> = ({ prefectures, onChange }) => {
                   checkedPrefectures.includes(prefecture.prefName + ' ')
                     ? setCheckedPrefectures(
                         checkedPrefectures.filter(
-                          (checkedPrefectures, index) =>
-                            checkedPrefectures !== prefecture.prefName + ' ',
+                          (checkedPrefectures) => checkedPrefectures !== prefecture.prefName + ' ',
                         ),
                       )
                     : setCheckedPrefectures([...checkedPrefectures, prefecture.prefName + ' '])

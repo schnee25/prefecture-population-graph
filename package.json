@@ -9,9 +9,10 @@
     "@types/jest": "^27.5.1",
     "@types/node": "^16.11.34",
     "@types/react": "^18.0.9",
-    "@types/react-dom": "^18.0.3",
+    "@types/react-dom": "^18.0.4",
     "axios": "^0.27.2",
     "classnames": "^2.3.1",
+    "eslint-config-standard": "^17.0.0",
     "highcharts": "^10.1.0",
     "highcharts-react-official": "^3.1.0",
     "react": "^18.1.0",
@@ -24,7 +25,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "webpack",
+    "watch": "webpack -w",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "next lint --dir src",
@@ -54,14 +56,18 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.23.0",
     "@typescript-eslint/parser": "^5.23.0",
-    "eslint": "^7.32.0 || ^8.2.0",
+    "eslint": "^8.15.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-webpack": "^0.13.2",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "prettier": "^2.6.2"
+    "prettier": "^2.6.2",
+    "ts-loader": "^9.3.0",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2"
   },
   "homepage": "https://schnee25.github.io/prefecture-population-graph",
   "build": "react-scripts build && cp build/index.html build/404.html"

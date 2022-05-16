@@ -1,6 +1,6 @@
-import styles from './style.module.scss'
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import styles from './style.module.scss'
 import PrefecturesList from '../Components/PrefectureList/PrefecturesList'
 import Graph from '../Components/Graph/Graph'
 
@@ -27,14 +27,16 @@ const Main: React.FC = () => {
       .then((results) => {
         setPreFectures(results.data)
       })
-      .catch((error) => {})
+      .catch((error) => {
+        return error
+      })
   }, [])
 
   const handleClickCheck = (prefName: string, prefCode: number, check: boolean) => {
-    let c_prefPopulation = prefPopulation.slice()
+    const slicedPrefPopulation = prefPopulation.slice()
 
     if (check) {
-      if (c_prefPopulation.findIndex((value) => value.prefName === prefName) !== -1) return
+      if (slicedPrefPopulation.findIndex((value) => value.prefName === prefName) !== -1) return
       axios
         .get(
           'https://opendata.resas-portal.go.jp/api/v1/population/composition/perYear?prefCode=' +
@@ -44,21 +46,19 @@ const Main: React.FC = () => {
           },
         )
         .then((results) => {
-          c_prefPopulation.push({
-            prefName: prefName,
+          slicedPrefPopulation.push({
+            prefName,
             data: results.data.result.data[0].data,
           })
 
-          setPrefPopulation(c_prefPopulation)
+          setPrefPopulation(slicedPrefPopulation)
         })
-        .catch((error) => {
-          return
-        })
+      // .catch((error) => {return})
     } else {
-      const deleteIndex = c_prefPopulation.findIndex((value) => value.prefName === prefName)
+      const deleteIndex = slicedPrefPopulation.findIndex((value) => value.prefName === prefName)
       if (deleteIndex === -1) return
-      c_prefPopulation.splice(deleteIndex, 1)
-      setPrefPopulation(c_prefPopulation)
+      slicedPrefPopulation.splice(deleteIndex, 1)
+      setPrefPopulation(slicedPrefPopulation)
     }
   }
 

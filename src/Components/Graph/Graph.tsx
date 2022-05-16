@@ -24,11 +24,11 @@ const Graph: React.FC<Props> = ({ populationData }) => {
     series.push({
       type: 'line',
       name: p.prefName,
-      data: data,
+      data,
     })
   }
 
-  var prefList = series.map((item) => {
+  const prefList = series.map((item) => {
     return item.name
   })
   const prefListStr = prefList.join(' ')
@@ -41,7 +41,7 @@ const Graph: React.FC<Props> = ({ populationData }) => {
       title: {
         text: '年度',
       },
-      categories: categories,
+      categories,
     },
     yAxis: {
       title: {
@@ -56,7 +56,7 @@ const Graph: React.FC<Props> = ({ populationData }) => {
 
   return (
     <div className={styles.graph}>
-      <HighchartsReact highcharts={Highcharts} options={options} className={styles['Highcharts']} />
+      <HighchartsReact highcharts={Highcharts} options={options} className={styles.Highcharts} />
     </div>
   )
 }
