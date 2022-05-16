@@ -24,5 +24,5 @@
     // ソースマップを有効化
     "sourceMap": true
   },
-  "include": ["src", "src/App.tsx", "docs/index.tsx"]
+  "include": ["src", "src/App.tsx", "src/index.tsx"]
 }
