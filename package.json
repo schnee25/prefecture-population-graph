@@ -36,7 +36,7 @@
     "lint:fix": "yarn lint --fix",
     "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'",
     "predeploy": "yarn run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "npm run build && gh-pages -d build",
     "dev": "react-scripts start",
     "test": "react-scripts test --env=jsdom",
     "setup": "yarn"
