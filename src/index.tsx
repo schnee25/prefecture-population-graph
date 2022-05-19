@@ -1,4 +1,5 @@
 import React from 'react'
+import { Route, Routes, BrowserRouter } from 'react-router-dom'
 // import ReactDOM from 'react-dom'
 // import './index.css'
 // import App from './App'
@@ -17,11 +18,11 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 
-import { BrowserRouter } from 'react-router-dom'
-
 ReactDOM.render(
   <BrowserRouter>
-    <App />
+    <Routes>
+      <Route path='/' element={<App />} />
+    </Routes>
   </BrowserRouter>,
   document.getElementById('root'),
 )
