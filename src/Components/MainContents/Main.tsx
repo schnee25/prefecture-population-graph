@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import styles from './style.module.scss'
-import PrefecturesList from '../Components/PrefectureList/PrefecturesList'
-import Graph from '../Components/Graph/Graph'
+import PrefecturesList from '../PrefectureList/PrefecturesList'
+import Graph from '../Graph/Graph'
 
 // const Apikey = process.env.REACT_APP_API_KEY;
 const ApiKey = 'owZHJwNQSeb7WDoUgRRiAWlJRXEhqP6Vr5NcYO8W'

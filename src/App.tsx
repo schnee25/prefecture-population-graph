@@ -1,15 +1,14 @@
-import React from 'react'
-import Main from './pages/Main'
+import React, { FC } from 'react'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import TopPage from './pages/TopPage'
 
-const App = () => {
-  return (
-    <div className='App'>
-      <header style={{ textAlign: 'center' }}>
-        <h1>都道府県別人口推移</h1>
-      </header>
-      <Main />
+const App: FC = () => (
+  <BrowserRouter>
+    <div>
+      <Switch>
+        <Route exact path='/' component={TopPage} />
+      </Switch>
     </div>
-  )
-}
-
+  </BrowserRouter>
+)
 export default App
