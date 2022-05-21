@@ -4,7 +4,7 @@ import styles from './style.module.scss'
 import PrefecturesList from '../PrefectureList/PrefecturesList'
 import Graph from '../Graph/Graph'
 
-const ApiKey = 'owZHJwNQSeb7WDoUgRRiAWlJRXEhqP6Vr5NcYO8W'
+const ApiKey = process.env.REACT_APP_RESAS_API_KEY + ''
 
 const Main: React.FC = () => {
   const [prefectures, setPreFectures] = useState<{
