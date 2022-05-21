@@ -4,7 +4,6 @@ import styles from './style.module.scss'
 import PrefecturesList from '../PrefectureList/PrefecturesList'
 import Graph from '../Graph/Graph'
 
-// const Apikey = process.env.REACT_APP_API_KEY;
 const ApiKey = 'owZHJwNQSeb7WDoUgRRiAWlJRXEhqP6Vr5NcYO8W'
 
 const Main: React.FC = () => {
