@@ -1,28 +1,36 @@
 # prefecture-population-graph 🗾👶🏻👩🏻🧑🏻🧑🏻‍🦳👱🏼👱🏽‍♀️👩🏾🧒🏻🧓🏼🥷🏻
 
-Frontend of [prefecture-population-graph](https://prefecture-population-graph.herokuapp.com/)
+Frontend of [prefecture-population-graph.herokuapp.com](https://prefecture-population-graph.herokuapp.com/)
 
 # What is prefecture-population-graph
 
 都道府県を選択するとその人口推移グラフが表示されます。🗾📈📉
 [![Image from Gyazo](https://i.gyazo.com/22ff62bafe07399a47734bc8c1e1f83f.gif)](https://prefecture-population-graph.herokuapp.com/)
 
-# 工夫した点 💪🏻🥺💮
+## 工夫した点 💪🏻🥺💮
 
 - TypeScript を使用した点 👏🏻😣🌀
-- 選択済みのチェックボックスの背景色が変わる点 ✔️✅
-- 選択済みの都道府県が一覧で表示される点 📝🗾
-- グラフのタイトルがリアクティブに変わる点 🖌🤔⚛️
-- 各項目のタイトルのデザイン 📰💕
 - APIKey をちゃんと環境変数で使った㊙️ 🔐💮
 - ファビコンとタイトルを設定した点 🗾🖥🌐
+- 各項目のタイトルのデザイン 📰💕
+- 選択済みの都道府県が一覧で表示される点 📝🗾
+- 選択済みのチェックボックスの背景色が変わる点 ✔️✅
+- グラフのタイトルがリアクティブに変わる点 🖌🤔⚛️
 - README をちゃんと書いた！📝😭💦💮
 
-# Getting Started with Create React App 🐈🐾
+## Build 前に必要なこと
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[RESAS API](https://opendata.resas-portal.go.jp/) に登録し API キーを取得
 
-## Available Scripts
+リポジトリ直下に.env ファイルを作成し
+
+```
+REACT_APP_RESAS_API_KEY = 'Your APIKey'
+```
+
+と記載
+
+## Available Scripts 🐈🐾
 
 In the project directory, you can run:
 
