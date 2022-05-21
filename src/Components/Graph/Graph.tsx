@@ -35,7 +35,10 @@ const Graph: React.FC<Props> = ({ populationData }) => {
 
   const options: Highcharts.Options = {
     title: {
-      text: prefListStr + ' の総人口推移',
+      text:
+        prefListStr === ''
+          ? '都道府県を選択してください'
+          : prefListStr + 'の総人口推移',
     },
     xAxis: {
       title: {
