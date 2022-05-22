@@ -61,7 +61,6 @@ const Main: React.FC = () => {
 
           setPrefPopulation(slicedPrefPopulation)
         })
-      // .catch((error) => {return})
     } else {
       const deleteIndex = slicedPrefPopulation.findIndex(
         (value) => value.prefName === prefName,
