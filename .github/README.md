@@ -10,13 +10,13 @@ Frontend of [prefecture-population-graph.herokuapp.com](https://prefecture-popul
 ## 工夫した点 💪🏻🥺💮
 
 - TypeScript を使用した点 👏🏻😣🌀
-- APIKey をちゃんと環境変数で使った㊙️ 🔐💮
+- APIKey をちゃんと環境変数で使った点 ㊙️ 🔐💮
 - ファビコンとタイトルを設定した点 🗾🖥🌐
 - 各項目のタイトルのデザイン 📰💕
 - 選択済みの都道府県が一覧で表示される点 📝🗾
 - 選択済みのチェックボックスの背景色が変わる点 ✔️✅
 - グラフのタイトルがリアクティブに変わる点 🖌🤔⚛️
-- README をちゃんと書いた！📝😭💦💮
+- README をちゃんと書いた！ 📝😭💦💮
 
 ## Build 前に必要なこと
 
