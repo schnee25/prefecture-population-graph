@@ -20,7 +20,8 @@ Frontend of [prefecture-population-graph.herokuapp.com](https://prefecture-popul
 
 ## 反省点
 - heroku側の問題に気づかず、メインブランチで色々試し他結果、コミット履歴を汚してしまった点😢
-
+- 開発初期にAPIキーをベタ打ちしてしまって、その上Gitにも上げてしまっていた点⚠️
+ 
 ## Build 前に必要なこと
 
 [RESAS API](https://opendata.resas-portal.go.jp/) に登録し API キーを取得
